@@ -21,10 +21,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // return MemberInfoActivity.PlaceholderFragment.newInstance(position + 1);
         switch (position) {
             case 0:
-                return new MemberRegisterFragment();
-            case 1:
                 return new MemberPictureFragment();
-            case 2:
+            case 1:
                 return new MemberMarkFragment();
         }
         return null;
@@ -32,19 +30,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        // Show 2 total pages.
+        return 2;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "用户注册";
+                return "客户资料";
             case 1:
-                return "用户评分";
-            case 2:
-                return "用户资料";
+                return "客户评分";
         }
         return null;
     }
