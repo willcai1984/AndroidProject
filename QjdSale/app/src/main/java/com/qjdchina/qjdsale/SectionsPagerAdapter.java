@@ -18,20 +18,22 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        // return MemberInfoActivity.PlaceholderFragment.newInstance(position + 1);
+        // return MemberInfoActivity.PlaceholderFragment.newInstance(position + msn);
         switch (position) {
             case 0:
                 return new MemberPictureFragment();
             case 1:
                 return new MemberMarkFragment();
+            case 2:
+                return new MemberPicturePlusFragment();
         }
         return null;
     }
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show skype total pages.
+        return 3;
     }
 
     @Override
@@ -41,6 +43,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "客户资料";
             case 1:
                 return "客户评分";
+            case 2:
+                return "客户资料plus";
         }
         return null;
     }
