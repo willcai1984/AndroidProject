@@ -2,19 +2,23 @@ package com.qjdchina.qjdsale;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageButton;
@@ -26,6 +30,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MemberPicturePlusFragment extends Fragment implements View.OnClickListener {
@@ -38,7 +44,10 @@ public class MemberPicturePlusFragment extends Fragment implements View.OnClickL
     private View rootView;
     private Bitmap bitmap;
     private int index = 0;
-    public final static int REQUEST_CODE_TAKE_PICTURE = 12;
+    private Map<ImageView,Bitmap> mapPic2Bit=new HashMap<ImageView,Bitmap>();
+    public static final int REQUEST_CODE_TAKE_PICTURE = 12;
+    public static final String SAVE_PATH_IN_SDCARD = "/sdcard/myImage/"; //图片及其他数据保存文件夹
+    public static final String IMAGE_CAPTURE_NAME = "cameraTmp.png"; //照片名称
 
 
     @Nullable
@@ -116,45 +125,52 @@ public class MemberPicturePlusFragment extends Fragment implements View.OnClickL
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         processPicture(requestCode, resultCode, data);
     }
 
     public void startCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File imgFile=new File(SAVE_PATH_IN_SDCARD,IMAGE_CAPTURE_NAME);
+        //intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imgFile));
         startActivityForResult(intent, REQUEST_CODE_TAKE_PICTURE);
     }
 
     public void processPicture(int requestCode, int resultCode, Intent intent) {
         Log.d(TAG, "Capture picture successfully");
-        //获取结果时，从结果内查看index参数
         Bundle b = intent.getExtras();
         if (requestCode == REQUEST_CODE_TAKE_PICTURE && resultCode == Activity.RESULT_OK) {
             bitmap = (Bitmap) b.get("data");
             switch (index) {
                 case 0:
                     ivCompanyLicense0.setImageBitmap(bitmap);
+                    mapPic2Bit.put(ivCompanyLicense0,bitmap);
+                    //load captured picture
                     ivCompanyLicense0.setTag(1);
                     ivCompanyLicense1.setVisibility(View.VISIBLE);
                     break;
                 case 1:
                     ivCompanyLicense1.setImageBitmap(bitmap);
+                    mapPic2Bit.put(ivCompanyLicense1, bitmap);
                     ivCompanyLicense1.setTag(1);
                     ivCompanyLicense2.setVisibility(View.VISIBLE);
                     break;
                 case 2:
                     ivCompanyLicense2.setImageBitmap(bitmap);
+                    mapPic2Bit.put(ivCompanyLicense2, bitmap);
                     ivCompanyLicense2.setTag(1);
                     ivCompanyLicense3.setVisibility(View.VISIBLE);
                     break;
                 case 3:
                     ivCompanyLicense3.setImageBitmap(bitmap);
+                    mapPic2Bit.put(ivCompanyLicense3, bitmap);
                     ivCompanyLicense3.setTag(1);
                     ivCompanyLicense4.setVisibility(View.VISIBLE);
                     break;
                 case 4:
                     ivCompanyLicense4.setImageBitmap(bitmap);
+                    mapPic2Bit.put(ivCompanyLicense4, bitmap);
                     ivCompanyLicense4.setTag(1);
                     break;
             }
