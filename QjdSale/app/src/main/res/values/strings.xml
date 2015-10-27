@@ -14,5 +14,6 @@
         <item>100-200</item>
         <item>200以上</item>
     </string-array>
+    <string name="title_activity_login">LoginActivity</string>
 
 </resources>
