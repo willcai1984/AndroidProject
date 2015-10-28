@@ -26,45 +26,46 @@
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape_login">
+            android:background="@drawable/shape_login"
+            android:orientation="horizontal">
             <!-- 账号 -->
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.5">
+
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_user"/>
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_user" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <EditText
                     android:id="@+id/et_user"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:hint="请输入用户名"
-                    android:textSize="15sp"
                     android:inputType="text"
                     android:singleLine="true"
                     android:textColor="@color/floralwhite"
                     android:textColorHint="@color/floralwhite"
                     android:textCursorDrawable="@null"
-                    android:background="@null"/>
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1.5">
-            </LinearLayout>
+                android:layout_weight="1.5"></LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -73,47 +74,47 @@
             android:layout_height="40dp"
             android:layout_below="@id/ll_user_div"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape_login">
+            android:background="@drawable/shape_login"
+            android:orientation="horizontal">
             <!-- 密码 text -->
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.5">
+
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_passwd"/>
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_passwd" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <EditText
                     android:id="@+id/et_passwd"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:hint="请输入密码"
-                    android:textSize="15sp"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:singleLine="true"
                     android:textColor="@color/floralwhite"
                     android:textColorHint="@color/floralwhite"
                     android:textCursorDrawable="@null"
-                    android:background="@null"/>
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1.5">
-            </LinearLayout>
+                android:layout_weight="1.5"></LinearLayout>
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/ll_submit_div"
@@ -124,14 +125,12 @@
             android:orientation="horizontal">
             <!-- 登录button -->
             <Button
-                android:id="@+id/signin_button"
+                android:id="@+id/btn_login"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="登录"
                 android:background="@color/gold"
-                />
+                android:text="登录" />
         </LinearLayout>
-
         />
     </RelativeLayout>
 
@@ -139,7 +138,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"></LinearLayout>
-
 </LinearLayout>
+
+
+
 
 

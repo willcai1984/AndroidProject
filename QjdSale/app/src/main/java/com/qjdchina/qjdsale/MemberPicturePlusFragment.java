@@ -49,7 +49,6 @@ public class MemberPicturePlusFragment extends Fragment implements View.OnClickL
     public static final String SAVE_PATH_IN_SDCARD = "/sdcard/myImage/"; //图片及其他数据保存文件夹
     public static final String IMAGE_CAPTURE_NAME = "cameraTmp.png"; //照片名称
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
