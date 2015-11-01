@@ -67,7 +67,7 @@ public class MemberPictureFragment extends Fragment implements View.OnClickListe
             case R.id.iv_comany_license:
                 Dialog dialog = new MemberPictureDialog(getActivity(),
                         R.style.dialog_full_screen);
-                ImageView iv = (ImageView) dialog.findViewById(R.id.iv_dialog);
+                ImageView iv = (ImageView) dialog.findViewById(R.id.iv_dialog_member);
                 iv.setImageBitmap(getImage(SAVE_PATH_IN_SDCARD + IMAGE_CAPTURE_NAME, 1024));
                 dialog.show();
                 break;
