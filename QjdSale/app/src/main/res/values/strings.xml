@@ -9,5 +9,7 @@
 
     <string name="title_activity_login">LoginActivity</string>
     <string name="experience">企业实际控制人行业从业年限</string>
+    <string name="organization_code">组织机构代码证正副本</string>
+    <string name="other_certificates">品牌授权书、荣誉证书、相关资质证书、特殊行业批准/许可文件</string>
 
 </resources>
