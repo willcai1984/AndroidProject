@@ -5,59 +5,64 @@
     android:orientation="vertical"
     tools:context="com.qjdchina.qjdsale.MemberMarkFragment">
 
-    <!--<TextView-->
-        <!--android:id="@+id/fragment_member_mark_title"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="@string/fragment_member_mark" />-->
-
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:id="@+id/ll_experience">
 
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
-                android:id="@+id/tv_company_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="公司规模"
-                android:textSize="25dp" />
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
 
             <TextView
-                android:layout_weight="1"
-                android:id="@+id/tv_company_size_mark"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="0分"
-                android:textSize="15dp" />
+                android:text="1"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="9"
             android:orientation="vertical">
-            <Spinner
-                android:id="@+id/sp_company_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:entries="@array/company_size"
-                android:prompt="@string/select_company_size"
-                />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:text="@string/experience"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textSize="15sp"
+                    android:id="@+id/tv_experience_option"/>
+            </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textSize="50sp"
+                android:id="@+id/tv_experience_mark"/>
+        </LinearLayout>
     </LinearLayout>
 
     <Button

@@ -7,13 +7,7 @@
     <string name="fragment_member_picture">客户资料录入</string>
     <string name="fragment_member_mark">客户预评分</string>
 
-    <string name="select_company_size">公司规模</string>
-    <string-array name="company_size">
-        <item>0-50</item>
-        <item>50-100</item>
-        <item>100-200</item>
-        <item>200以上</item>
-    </string-array>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="experience">企业实际控制人行业从业年限</string>
 
 </resources>
