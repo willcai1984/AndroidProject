@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">-->
+    <!--</style>-->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/my_actionbar_style</item>
+        <item name="android:actionBarTabTextStyle">@style/my_actionbar_tab_style</item>
+    </style>
+
+    <style name="my_actionbar_style" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <!--title部分背景色-->
+        <item name="android:background">@color/qjdpurple</item>
+        <!--tab部分背景色-->
+        <item name="android:backgroundStacked">@color/qjdpurple</item>
+        <!--tab底部分离时显示的颜色，不过貌似没什么用-->
+        <item name="android:backgroundSplit">@color/qjdyellow</item>
+        <item name="android:titleTextStyle">@style/my_actionbar_title_style</item>
+    </style>
+
+    <style name="my_actionbar_title_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="my_actionbar_tab_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="android:Theme.Holo.Light.NoActionBar" />
+
+    <style name="AppTheme.NoTitleBar" parent="android:Theme.Light.NoTitleBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="android:Theme.Holo.Light.DarkActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="android:Theme.Light" />
+
+    <style name="dialog_photo" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="dialog_full_screen" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="dialog_center" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+
+</resources>
+

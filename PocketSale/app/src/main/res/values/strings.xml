@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PocketSale</string>
+    <string name="hello_world">Hello App world!</string>
+    <string name="action_settings">Settings</string>
+	
+    <string name="loginName">账号</string>
+    <string name="password">密码</string>
+
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_member_picture">客户资料录入</string>
+    <string name="fragment_member_mark">客户预评分</string>
+    <!--评分项-->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="sale">企业年销售额</string>
+    <string name="registered_capital">企业注册资本</string>
+    <string name="establish_years">企业成立年限</string>
+    <string name="operator_experience">企业实际控制人行业从业年限</string>
+    <string name="size">企业团队规模</string>
+    <string name="worth">实际控制人家庭净资产</string>
+    <!--照片录入-->
+    <string name="organization_code">组织机构代码证正副本</string>
+    <string name="other_certificates">品牌授权书、荣誉证书、相关资质证书、特殊行业批准/许可文件</string>
+    <string name="title_activity_test">testActivity</string>
+    <string name="title_activity_member_info">MemberInfoActivity</string>
+    <string name="title_activity_member_detail">MemberDetailActivity</string>
+    <string name="company_license">营业执照正副本</string>
+
+</resources>
