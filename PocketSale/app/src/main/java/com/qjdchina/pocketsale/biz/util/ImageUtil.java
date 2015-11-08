@@ -5,15 +5,19 @@ import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 /**
  * Created by Administrator on 2015/11/1.
  */
 public class ImageUtil {
-    public static Bitmap getImage( String file) {
-        //default is 100kb
-        return getImage(file, 100);
+    public static Bitmap getImage(String file) {
+        //default is 512kb
+        return getImage(file, 512);
     }
+
     /*
     * @PARAM file， 图片绝对路径
     * @PARAM size， 图形大小，单位为kb
@@ -50,15 +54,32 @@ public class ImageUtil {
     */
     public static Bitmap compressImage(Bitmap image, int size) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-        int options = 100;
-        while (baos.toByteArray().length / 1024 > size) {  //循环判断如果压缩后图片是否大于100kb,大于继续压缩
-            baos.reset();//重置baos即清空baos
-            image.compress(Bitmap.CompressFormat.JPEG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
-            options -= 10;//每次都减少10
+        //现在的图片都约2M，从70%开始压缩
+        //TODO bitmap转化成JPEG的话，size不是很准
+        for (int i = 100; i > 0; i = i - 5) {
+            image.compress(Bitmap.CompressFormat.JPEG, i, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
+            if (baos.toByteArray().length / 1024 <= size) {
+                break;
+            }
+            baos.reset();
         }
+
         ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
         Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
         return bitmap;
+    }
+
+
+    public static boolean bitmap2File(Bitmap bmp, String filePath) {
+        Bitmap.CompressFormat format = Bitmap.CompressFormat.JPEG;
+        int quality = 100;
+        OutputStream stream = null;
+        try {
+            stream = new FileOutputStream(filePath);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return bmp.compress(format, quality, stream);
     }
 }
