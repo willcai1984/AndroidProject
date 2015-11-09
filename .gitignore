@@ -25,4 +25,9 @@ proguard/
 
 # Log Files
 *.log
+<<<<<<< HEAD
+/PocketSale/.idea
+=======
+/PocketSale/app/app.iml
+>>>>>>> 33f1f7a8a8d120c7a9e553d99361695e9f4491fe
 /PocketSale/.idea
